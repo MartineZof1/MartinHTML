@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Управление воспроизведением через JavaScript</title>
+</head>
+<body>
+	<vidoe id="video" style="border: 2px solid gray; cursor: pointer;">
+		<source src="video/krasota.mp4" />
+		<source src="video/krasota.webm" />	
+	</video>
+
+	<script>
+		window.onload = function () {
+			var videoElem = document.getElementById("video")
+
+			videoElem.width = videoElem.videoWidth / 2;
+			videoElem.height = videoElem.videoHeight / 2;
+
+			videoElem.onmuseover = function () {
+				this.paly();
+
+			}
+
+			videoElem.onmuseout = function () {
+				this.pause();
+			}
+		}
+
+	</script>
+
+</body>
+</html>
